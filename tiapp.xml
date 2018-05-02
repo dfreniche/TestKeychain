@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app 
+  xmlns:ti="http://ti.appcelerator.org">
+  <id>com.testapp</id>
+  <name>TestKeychain</name>
+  <version>1.0</version>
+  <publisher>dfreniche</publisher>
+  <url/>
+  <description>undefined</description>
+  <copyright>2018 by dfreniche</copyright>
+  <icon>appicon.png</icon>
+  <fullscreen>false</fullscreen>
+  <navbar-hidden>false</navbar-hidden>
+  <analytics>true</analytics>
+  <guid>7bd22e8b-3303-49b9-9eee-d52e0c6f1559</guid>
+  <property name="ti.ui.defaultunit" type="string">dp</property>
+  <property name="run-on-main-thread" type="bool">true</property>
+  <ios>
+    <log-server-port>3000</log-server-port>
+    <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+    <use-app-thinning>true</use-app-thinning>
+    <plist>
+      <dict>
+        <key>UISupportedInterfaceOrientations~iphone</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+        </array>
+        <key>UISupportedInterfaceOrientations~ipad</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+          <string>UIInterfaceOrientationPortraitUpsideDown</string>
+          <string>UIInterfaceOrientationLandscapeLeft</string>
+          <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+        <key>UIRequiresPersistentWiFi</key>
+        <false/>
+        <key>UIPrerenderedIcon</key>
+        <false/>
+        <key>UIStatusBarHidden</key>
+        <false/>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleDefault</string>
+      </dict>
+    </plist>
+    <entitlements>
+      <dict>
+        <key>com.apple.security.application-groups</key>
+        <array>
+          <string>group.test.projects</string>
+        </array>
+        <key>keychain-access-groups</key>
+        <array>
+          <string>$(AppIdentifierPrefix)keychain.test.projects</string>
+        </array>
+      </dict>
+    </entitlements>
+    <extensions>
+      <extension projectPath="extensions/TestKeychain.xcodeproj">
+        <target name="ShareExtension">
+          <provisioning-profiles>
+            <devices/>
+          </provisioning-profiles>
+        </target>
+      </extension>
+    </extensions>
+  </ios>
+  <android 
+    xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <modules>
+      <module platform="iphone">ti.identity</module>
+    </modules>
+    <deployment-targets>
+      <target device="android">false</target>
+      <target device="ipad">false</target>
+      <target device="iphone">true</target>
+    </deployment-targets>
+    <sdk-version>7.1.0.GA</sdk-version>
+    <plugins>
+      <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+    <property name="appc-app-id" type="string">5ae9c45e6d9244226eca3bfb</property>
+  </ti:app>
